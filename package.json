@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "husky:setup": "npx husky init",
+    "lint": "eslint .",
+    "prettier": "prettier --check \"**/*.{js,jsx,json,html,css,ts,tsx,yml,yaml}\"",
+    "prettier:write": "prettier --write \"**/*.{js,jsx,json,html,css,ts,tsx,yml,yaml}\" --ignore-unknown",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "NodeJS",
+    "Backend development"
+  ],
+  "author": "Rashmi Raj",
+  "license": "ISC",
+  "description": "NodeJS playground",
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "typescript-eslint": "^8.26.1"
+  }
+}
