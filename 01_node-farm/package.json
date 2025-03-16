@@ -1,0 +1,16 @@
+{
+  "name": "01_node-farm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "A Simple API",
+    "Node Farm API"
+  ],
+  "author": "Rashmi Raj",
+  "license": "ISC",
+  "description": "A basic API for Node farm"
+}
