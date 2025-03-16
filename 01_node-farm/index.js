@@ -1,8 +1,16 @@
 const http = require('http');
 const fs = require('fs');
+const url = require('url');
+const slugify = require('slugify');
+
+const replaceTemplate = require('./models/replaceTemplate');
 
 const data = fs.readFileSync('./db/data.json', 'utf-8');
 const dataObj = JSON.parse(data);
+
+// Just using slugify, not getting used in the routing of the application
+const slugs = dataObj.map((el) => slugify(el.productName, { lower: true }));
+console.log(slugs);
 
 const tempOverview = fs.readFileSync(
   './templates/template-overview.html',
@@ -14,25 +22,10 @@ const tempProduct = fs.readFileSync(
   'utf-8',
 );
 
-const replaceTemplate = (temp, product) => {
-  let output = temp.replace(/{%PRODUCT_NAME%}/g, product.productName);
-  output = temp.replace(/{%ID%}/g, product.id);
-  output = temp.replace(/{%IMAGE%}/g, product.image);
-  output = temp.replace(/{%PRICE%}/g, product.price);
-  output = temp.replace(/{%FROM%}/g, product.from);
-  output = temp.replace(/{%NUTRIENTS%}/g, product.nutrients);
-  output = temp.replace(/{%QUANTITY%}/g, product.quantity);
-  output = temp.replace(/{%PRODUCT_DESCRIPTION%}/g, product.description);
-  if (!product.organic)
-    output = temp.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
-
-  return output;
-};
-
 const server = http.createServer((req, res) => {
-  const pathName = req.url;
+  const { query, pathname } = url.parse(req.url, true);
 
-  if (pathName === '/') {
+  if (pathname === '/' || pathname === '/products') {
     res.writeHead(200, { 'Content-Type': 'text/html' });
 
     const cardsHtml = dataObj
@@ -41,7 +34,13 @@ const server = http.createServer((req, res) => {
     const output = tempOverview.replace('{%PRODUCT_CARDS%}', cardsHtml);
 
     res.end(output);
-  } else if (pathName === '/api') {
+  } else if (pathname === '/product') {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+
+    const product = dataObj[query.id];
+    const output = replaceTemplate(tempProduct, product);
+    res.end(output);
+  } else if (pathname === '/api') {
     res.writeHead(200, {
       'Content-Type': 'application/json',
     });
