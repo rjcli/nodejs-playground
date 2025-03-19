@@ -1,6 +1,10 @@
 # NodeJS Playground
 Welcome to my NodeJS Learning repository! This repository is dedicated to helping me learn and practice NodeJS. It contains a variety of exercises, tutorial codes, and mini-projects designed to enhance my understanding of NodeJS.
 
+## Things to remember
+- If you have opened node in terminal using the `node` command then you can exit by pressing `Ctrl + D` or `.exit`.
+- To list all the outdated packages in a project, use `npm outdated` command.
+
 ## Resources
 - [NodeJS Bootcamp GitHub repository](https://github.com/jonasschmedtmann/complete-node-bootcamp)
 
