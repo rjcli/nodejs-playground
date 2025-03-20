@@ -1,4 +1,4 @@
-# NodeJS Complete Bootcamp
+# NodeJS Complete Guide
 
 ## Topics
 - Introduction to NodeJS
