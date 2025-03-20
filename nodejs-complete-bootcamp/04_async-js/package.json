@@ -1,0 +1,19 @@
+{
+  "name": "04_async",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Asynchronous JavaScript",
+    "Promises",
+    "Async/Await"
+  ],
+  "author": "Rashmi Raj",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "superagent": "^10.2.0"
+  }
+}
