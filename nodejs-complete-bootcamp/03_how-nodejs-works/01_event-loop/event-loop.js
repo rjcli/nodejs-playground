@@ -1,17 +1,14 @@
 const fs = require('fs');
 
-// setTimeout
 setTimeout(() => {
   console.log('Timer 1 finished');
 }, 0);
 
-// setImmediate
 global.setImmediate(() => {
   console.log('Immediate 1 finished');
 });
 
-// I/O
-fs.readFile('./test-file.txt', () => {
+fs.readFile('../test-file.txt', () => {
   console.log('I/O finished');
   console.log('--------------------------');
 
@@ -32,5 +29,4 @@ fs.readFile('./test-file.txt', () => {
   });
 });
 
-// Top-level code
 console.log('Hello from the top-level code');
