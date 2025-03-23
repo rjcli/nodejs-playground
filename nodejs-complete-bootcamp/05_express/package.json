@@ -1,0 +1,21 @@
+{
+  "name": "05_express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "Express",
+    "Server with Express"
+  ],
+  "author": "Rashmi Raj",
+  "license": "ISC",
+  "description": "Learn NodeJS, Express and MongoDB",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0"
+  }
+}
