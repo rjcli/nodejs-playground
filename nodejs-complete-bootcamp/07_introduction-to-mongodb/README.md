@@ -186,6 +186,12 @@ db.collection.find(query, projection)
     ```
     - Returns documents where the `city` field inside the `address` object is `"New York"`.
 
+7. **Shorthand for `findOne`**:
+    ```javascript
+    // Tour.findOne({ _id: req.params.id });
+    Tour.findById(req.params.id);
+    ```
+
 ### Common Query Operators
 - `$eq`: Matches values equal to a specified value.
 - `$ne`: Matches values not equal to a specified value.
