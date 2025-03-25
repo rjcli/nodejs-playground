@@ -12,6 +12,15 @@ TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       19860
 ## Resources
 - [NodeJS Bootcamp GitHub repository](https://github.com/jonasschmedtmann/complete-node-bootcamp)
 - [ESLint](https://eslint.org/)
+- [Validator](https://github.com/validatorjs/validator.js/)
+- [MongoDB Docs](https://www.mongodb.com/docs/manual/)
+
+## Skip pre-commit hook command
+First stages the files you want to commit and then use the following command.
+```bash
+NO_VERIFY_YOLO=1 git commit -m "Your commit message"
+```
+
 
 ## Credits
 - The folder `nodejs-complete-bootcamp` follows the Udemy course [Node.js, Express, MongoDB & More: The Complete Bootcamp](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/) by [Jonas Schmedtmann](https://www.udemy.com/user/jonasschmedtmann/).
