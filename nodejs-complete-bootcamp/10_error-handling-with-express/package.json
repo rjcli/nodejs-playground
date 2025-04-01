@@ -1,0 +1,21 @@
+{
+  "name": "10_error-handling-with-express",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "Express",
+    "Error handling",
+    "Error handling with Express"
+  ],
+  "author": "Rashmi Raj",
+  "license": "ISC",
+  "description": "Error handling with Express",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
