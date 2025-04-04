@@ -1,0 +1,30 @@
+{
+  "name": "12_authentication-authorization-and-security",
+  "version": "1.0.0",
+  "description": "Authentication, Authorization and Security in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "Authentication, Authorization and Security",
+    "Node.js Authentication and Authorization"
+  ],
+  "author": "Rashmi Raj",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.4.7",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.1",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.10.0",
+    "validator": "^13.15.0",
+    "xss-clean": "^0.1.4"
+  }
+}
