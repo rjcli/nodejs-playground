@@ -4,7 +4,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const catchAsyncError = require('./utils/catchAsyncError');
 
-// Uncaught Exception
+// Uncaught Exception (Should be on top before initializing express)
 global.process.on('uncaughtException', (err) => {
   console.log(err.name, err.message);
   console.log('Uncaught Exception! Shutting down...');

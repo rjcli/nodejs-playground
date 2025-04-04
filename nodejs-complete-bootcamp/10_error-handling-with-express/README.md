@@ -291,3 +291,34 @@ Write robust code to prevent uncaught exceptions from occurring in the first pla
 Use tools like `process.on('uncaughtException')` and `process.on('unhandledRejection')` as a fallback for unexpected errors.
 
 This ensures that your application logs the error and exits gracefully when an uncaught exception occurs.
+
+### `.catch` function with `next` middleware
+The following two lines produces the same result because the `.catch()` method in JavaScript can directly accept a function reference `(next)` as its argument, which is equivalent to passing an inline function like `(err) => next(err)`.
+```javascript
+fn(req, res, next).catch((err) => next(err));
+fn(req, res, next).catch(next);
+```
+
+#### Explanation
+##### 1. First line
+```javascript
+fn(req, res, next).catch((err) => next(err));
+```
+- Here, `.catch()` takes an inline function `(err) => next(err)`.
+- When the promise returned by `fn(req, res, next)` is rejected, the `err` is passed to the arrow function, which then calls `next(err)` to pass the error to the next middleware.
+
+##### 2. Second Line
+```javascript
+fn(req, res, next).catch(next);
+```
+- Here, `.catch()` directly takes the `next` function as its argument.
+- When the promise is rejected, the `.catch()` automatically calls `next(err)` with the error, as `next` is designed to accept an error as its first argument. 
+
+#### Why are they equivalent
+The `.catch()` method in JavaScript works by passing the rejection reason (error) to the function provided as its argument. Since `next` is already a function that takes an error as its argument `(next(err))`, there is no need to wrap it in another function like `(err) => next(err)`.
+
+#### Simplification
+The second line is a shorthand for the first line. It is more concise and achieves the same result because `next` is already compatible with the `.catch()` method's behavior.
+
+#### Best Practice
+Use the second line `(fn(req, res, next).catch(next))` for simplicity and readability, as it avoids unnecessary wrapping of the next function.
