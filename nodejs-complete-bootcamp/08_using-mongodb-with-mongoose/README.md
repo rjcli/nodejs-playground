@@ -245,3 +245,50 @@ Tour.findByIdAndUpdate(
 ```
 
 Mongoose validation ensures data integrity by enforcing rules at the schema level. You can use built-in validators for common cases and custom validators for more complex logic. 
+
+### Instance Methods in Mongoose
+
+An **instance method** in Mongoose is a method that is defined on a schema and is available on all documents created from that schema. These methods allow you to add custom functionality to your documents.
+
+#### Example:
+```javascript
+// Instance method to check if the provided password matches the stored password
+userSchema.methods.isCorrectPassword = async function (candidatePassword, userPassword) {
+  return await bcrypt.compare(candidatePassword, userPassword);
+};
+```
+
+#### Explanation:
+1. `userSchema.methods`:
+    - The `methods` property of a Mongoose schema is used to define instance methods.
+    - These methods are available on all documents created from the schema.
+2. **`isCorrectPassword` Method**:
+    - This method compares the `candidatePassword` (provided by the user) with the `userPassword` (stored in the database).
+    - It uses `bcrypt.compare()` to perform the comparison and returns a boolean indicating whether the passwords match.
+3. **Usage**:
+    - Once a document is created or queried, you can call the instance method on it:
+
+```javascript
+const user = await User.findOne({ email: 'example@example.com' });
+const isCorrect = await user.isCorrectPassword('inputPassword', user.password);
+console.log(isCorrect); // true or false
+```
+
+#### Key Points:
+1. **Context (`this`)**:
+    - Inside an instance method, this refers to the specific document on which the method is called.
+2. **Use Cases**:
+    - Instance methods are commonly used for tasks like:
+      - Password validation
+      - Generating authentication tokens
+      - Custom document-specific logic
+3. **Difference from Static Methods**:
+    - Instance methods operate on individual documents.
+    - Static methods operate on the model itself (e.g., `User.find()`).
+
+#### Benefits:
+- Encapsulates document-specific logic within the schema.
+- Keeps the code clean and reusable.
+- Provides a natural way to interact with documents in Mongoose.
+
+Instance methods are a powerful feature of Mongoose that allow you to extend the functionality of your documents.
