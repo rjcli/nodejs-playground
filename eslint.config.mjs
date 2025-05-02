@@ -5,7 +5,9 @@ import pluginJs from '@eslint/js';
 export default [
   {
     files: ['**/*.js'],
-    languageOptions: { sourceType: 'commonjs' },
+    languageOptions: {
+      sourceType: 'commonjs',
+    },
     rules: {
       'spaced-comment': 'error',
       'no-console': 'off',
@@ -24,7 +26,9 @@ export default [
     },
   },
   {
-    languageOptions: { globals: globals.browser },
+    languageOptions: {
+      globals: globals.browser,
+    },
   },
   pluginJs.configs.recommended,
 ];

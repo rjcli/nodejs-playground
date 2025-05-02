@@ -4,7 +4,7 @@ Welcome to my NodeJS Learning repository! This repository is dedicated to helpin
 ## Things to remember
 - If you have opened node in terminal using the `node` command then you can exit by pressing `Ctrl + D` or `.exit`.
 - To list all the outdated packages in a project, use `npm outdated` command.
-- To close a process running on `localhost:3000` in Windows, first identify the process ID (PID) using `netstat -ano | findstr :3000`, then use `taskkill /PID <PID> /F` to terminate it. You'll get the process ID with the `netstat` command (Here, `19860` is the PID).
+- To close a process running on `localhost:3000` in Windows, first identify the process ID (PID) using `netstat -ano | findstr :3000`, then use `taskkill /PID <PID> /F` (Try to run this in Windows Powershell) to terminate it. You'll get the process ID with the `netstat` command (Here, `19860` is the PID).
 ```bash
 TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       19860
 ```

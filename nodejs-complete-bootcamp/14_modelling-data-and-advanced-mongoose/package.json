@@ -1,0 +1,19 @@
+{
+  "name": "14_modelling-data-and-advanced-mongoose",
+  "version": "1.0.0",
+  "description": "Modelling data and Advanced Mongoose",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "Modelling Data",
+    "Advanced Mongoose"
+  ],
+  "author": "Rashmi Raj",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.13.2"
+  }
+}

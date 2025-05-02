@@ -47,5 +47,4 @@
 - 
 
 ## Credits
-- This folder `nodejs-complete-guide` follows the Udemy course [NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)](https://www.udemy.com/course/nodejs-the-complete-guide) by [Maximilian Schwarzmüller
-](https://www.udemy.com/user/maximilian-schwarzmuller/).
+- This folder `nodejs-complete-guide` follows the Udemy course [NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)](https://www.udemy.com/course/nodejs-the-complete-guide) by [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/).
