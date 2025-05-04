@@ -14,6 +14,7 @@ TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       19860
 - [ESLint](https://eslint.org/)
 - [Validator](https://github.com/validatorjs/validator.js/)
 - [MongoDB Docs](https://www.mongodb.com/docs/manual/)
+- [Gzip Compression](https://www.giftofspeed.com/gzip-test/)
 
 ## Skip pre-commit hook command
 First stages the files you want to commit and then use the following command.
