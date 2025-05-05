@@ -4,9 +4,13 @@ import pluginJs from '@eslint/js';
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
+    ignores: ['node_modules/', '**/public'],
+  },
+  {
     files: ['**/*.js'],
     languageOptions: {
       sourceType: 'commonjs',
+      globals: globals.node,
     },
     rules: {
       'spaced-comment': 'error',
